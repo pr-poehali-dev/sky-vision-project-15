@@ -17,17 +17,18 @@ export default function SplineScene() {
         <div
           style={{
             animation: "iphone-float 4s ease-in-out infinite",
-            filter: "drop-shadow(0 40px 80px hsl(211 100% 60% / 0.3)) drop-shadow(0 0 40px hsl(0 0% 0% / 0.8))",
+            filter: "drop-shadow(0 40px 80px hsl(0 60% 25% / 0.5)) drop-shadow(0 0 60px hsl(0 0% 0% / 0.9))",
           }}
         >
           <img
             src={IPHONE_IMG}
-            alt="iPhone 18 Pro"
+            alt="iPhone 18 Pro Max"
             style={{
               height: "480px",
               width: "auto",
               objectFit: "contain",
               animation: "iphone-rotate 8s ease-in-out infinite",
+              mixBlendMode: "lighten",
             }}
           />
         </div>
@@ -36,7 +37,7 @@ export default function SplineScene() {
       <div
         className="absolute bottom-16 right-1/4 w-64 h-8 rounded-full"
         style={{
-          background: "hsl(211 100% 60% / 0.15)",
+          background: "hsl(0 60% 30% / 0.2)",
           filter: "blur(20px)",
           animation: "shadow-pulse 4s ease-in-out infinite",
         }}
