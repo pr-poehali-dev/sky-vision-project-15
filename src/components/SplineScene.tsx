@@ -1,56 +1,61 @@
-import { Suspense, useState } from "react"
-import Spline from "@splinetool/react-spline"
+const IPHONE_IMG = "https://cdn.poehali.dev/projects/2eb8511d-1d99-4c79-a260-71d1c51cc5cb/bucket/50623fd5-fe65-4a81-b951-cbacca3444b1.jpg"
 
 export default function SplineScene() {
-  const [isLoading, setIsLoading] = useState(true)
-  const [hasError, setHasError] = useState(false)
-
-  const handleLoad = () => {
-    console.log("Spline scene loaded successfully")
-    setIsLoading(false)
-    setHasError(false)
-  }
-
-  const handleError = (error: unknown) => {
-    console.log("Spline scene failed to load:", error)
-    setIsLoading(false)
-    setHasError(true)
-  }
-
   return (
-    <div className="absolute inset-0 w-full h-full bg-background">
-      {isLoading && (
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-          <div className="text-foreground text-center">
-            <div className="text-lg mb-2">Загрузка 3D сцены...</div>
-            <div className="text-sm opacity-70">Пожалуйста, подождите</div>
-          </div>
-        </div>
-      )}
+    <div className="absolute inset-0 w-full h-full bg-background overflow-hidden">
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(ellipse 60% 80% at 70% 50%, hsl(211 100% 60% / 0.08) 0%, transparent 70%)",
+        }}
+      />
 
-      {hasError && (
-        <div className="absolute inset-0 w-full h-full flex items-center justify-center">
-          <div className="text-foreground text-center">
-            <div className="text-lg mb-2">3D сцена недоступна</div>
-            <div className="text-sm opacity-70">Не удалось загрузить 3D модель</div>
-          </div>
-        </div>
-      )}
-
-      {!hasError && (
-        <Suspense fallback={null}>
-          <Spline
-            scene="https://prod.spline.design/l8gr6AhxxCqDIdBx/scene.splinecode"
-            onLoad={handleLoad}
-            onError={handleError}
+      <div
+        className="absolute right-0 top-0 h-full flex items-center justify-center"
+        style={{ width: "55%", right: "2%" }}
+      >
+        <div
+          style={{
+            animation: "iphone-float 4s ease-in-out infinite",
+            filter: "drop-shadow(0 40px 80px hsl(211 100% 60% / 0.3)) drop-shadow(0 0 40px hsl(0 0% 0% / 0.8))",
+          }}
+        >
+          <img
+            src={IPHONE_IMG}
+            alt="iPhone 18 Pro"
             style={{
-              width: "100%",
-              height: "100%",
-              background: "transparent",
+              height: "480px",
+              width: "auto",
+              objectFit: "contain",
+              animation: "iphone-rotate 8s ease-in-out infinite",
             }}
           />
-        </Suspense>
-      )}
+        </div>
+      </div>
+
+      <div
+        className="absolute bottom-16 right-1/4 w-64 h-8 rounded-full"
+        style={{
+          background: "hsl(211 100% 60% / 0.15)",
+          filter: "blur(20px)",
+          animation: "shadow-pulse 4s ease-in-out infinite",
+        }}
+      />
+
+      <style>{`
+        @keyframes iphone-float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-18px); }
+        }
+        @keyframes iphone-rotate {
+          0%, 100% { transform: perspective(800px) rotateY(-8deg) rotateX(2deg); }
+          50% { transform: perspective(800px) rotateY(8deg) rotateX(-2deg); }
+        }
+        @keyframes shadow-pulse {
+          0%, 100% { transform: scaleX(1); opacity: 0.6; }
+          50% { transform: scaleX(0.7); opacity: 0.3; }
+        }
+      `}</style>
     </div>
   )
 }
