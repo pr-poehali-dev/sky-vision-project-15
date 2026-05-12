@@ -10,12 +10,12 @@ export default function HeroTextOverlay() {
           paintOrder: "stroke fill",
         }}
       >
-        МАКС
+        iPHONE
       </h1>
       <p className="text-foreground font-mono text-sm md:text-base max-w-xs tracking-widest lg:text-base">
-        Ваш надежный гид
+        Лучшие цены на оригинальные
         <br />
-        в мире баз данных
+        iPhone с гарантией
       </p>
     </div>
   )

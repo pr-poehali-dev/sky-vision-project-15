@@ -57,17 +57,17 @@ const Index = () => {
 
             <div className="flex flex-col gap-2 max-w-5xl">
               <div className="flex items-center gap-4">
-                <span className="text-accent font-mono text-sm">Имя</span>
-                <span className="text-foreground font-mono text-sm">Макс</span>
+                <span className="text-accent font-mono text-sm">Модели</span>
+                <span className="text-foreground font-mono text-sm">iPhone 15, 15 Pro, 15 Pro Max, 14, 13 и другие</span>
               </div>
               <div className="flex items-center gap-4">
-                <span className="text-accent font-mono text-sm">Вид</span>
-                <span className="text-foreground font-mono text-sm">Инопланетянин с планеты Флэпджек</span>
+                <span className="text-accent font-mono text-sm">Гарантия</span>
+                <span className="text-foreground font-mono text-sm">12 месяцев на все устройства</span>
               </div>
               <div className="flex items-start gap-4">
-                <span className="text-accent font-mono text-sm">Характер</span>
+                <span className="text-accent font-mono text-sm">О нас</span>
                 <span className="text-foreground font-mono text-sm">
-                  Любопытный, гибкий, немного расслабленный - но острый, когда дело касается баз данных и организации информации.
+                  Продаём только оригинальные iPhone — новые и восстановленные. Быстрая доставка по всей России, удобная оплата и честные цены без скрытых наценок.
                 </span>
               </div>
             </div>
